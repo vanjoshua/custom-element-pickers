@@ -1,0 +1,5 @@
+{
+  "$schema": "https://dev.wix.com/wix-cli/schemas/wix-config.json",
+  "appId": "7bf02805-e7de-467b-95b6-34d2125b4b5d",
+  "projectId": "ce-panel-test"
+}
