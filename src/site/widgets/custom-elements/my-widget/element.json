@@ -1,0 +1,17 @@
+{
+  "$schema": "https://dev.wix.com/wix-cli/schemas/custom-element.json",
+  "id": "4db265a9-a5d1-40d9-bdaa-dd430ac07230",
+  "name": "Custom Element",
+  "width": {
+    "defaultWidth": 300,
+    "allowStretch": true
+  },
+  "height": {
+    "defaultHeight": 150
+  },
+  "installation": {
+    "autoAddToSite": true,
+    "essential": true
+  }
+}
+
