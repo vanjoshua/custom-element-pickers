@@ -1,20 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reactToWebComponent from 'react-to-webcomponent';
-import { Text, WixDesignSystemProvider } from '@wix/design-system';
-import '@wix/design-system/styles.global.css';
 
 type Props = {
-  name: string;
+  color: string;
 };
 
 function CustomElement(props: Props) {
   return (
-    <WixDesignSystemProvider>
-      <div>
-        <Text>Hello {props.name ?? 'Wix CLI'}</Text>
+    <div style={{ display: 'flex', height: '100%', backgroundColor: `${props.color}`, justifyContent: 'center', alignItems: 'center' }}>
+        <h1>Custom Element</h1>
       </div>
-    </WixDesignSystemProvider>
   );
 }
 
@@ -25,7 +21,7 @@ const customElement = reactToWebComponent(
   ReactDOM as any,
   {
     props: {
-      name: 'string',
+      color: 'string',
     },
   }
 );

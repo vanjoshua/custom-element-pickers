@@ -13,6 +13,7 @@ import "@wix/design-system/styles.global.css";
 
 function Panel() {
   const { selectColor, selectFont } = useWixModules(inputs);
+  const { setProp, getProp } = useWixModules(widget);
   const [color, setColor] = useState("#000000");
   const [fontValue, setFontValue] = useState("\n\n\n");
   const [colorValue, setColorValue] = useState("\n\n\n");
@@ -22,7 +23,7 @@ function Panel() {
       <SidePanel.Content noPadding stretchVertically>
         <SidePanel.Field>
           <FormField>
-            <ColorInput value={color} onChange={setColor} />
+            <ColorInput value={color} />
           </FormField>
         </SidePanel.Field>
         <SidePanel.Field>
@@ -31,6 +32,11 @@ function Panel() {
               onClick={(event) => {
                 selectColor({ theme: "color_37" }, (c) => {
                   setColorValue(JSON.stringify(c, null, 2));
+                  if (c.theme !== null) {
+                    const themeVar = `rgb(var(--${c.theme}))`;
+                    console.log(themeVar);
+                    setProp("color", themeVar)
+                  } else setProp("color", c.color);
                 });
               }}
             >
